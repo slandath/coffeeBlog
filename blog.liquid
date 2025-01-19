@@ -1,0 +1,25 @@
+---
+layout: default.html
+---
+<main class="container has-text-centered">
+    <h1 class="is-size-1 has-text-centered">Blog Entries</h1>
+    <div class="container">
+        <div class="columns py-4">
+  {%- for post in collections.posts -%}
+    <div class="column is-one-quarter">
+        <div class="card">
+          <div class="card-content has-text-centered">
+            <div class="content">
+              <h5 class="card-title">{{post.data.title}}</h5>
+              <p class="card-text">{{ post.date | date: "%B %d, %Y"}}</p>
+              <a href="{{ post.url }}" class="button is-info">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  {%- endfor -%}
+</div>
+</div>
+</main>

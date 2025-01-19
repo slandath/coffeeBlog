@@ -1,0 +1,35 @@
+---
+layout: default.html
+---
+<main class="container has-text-centered">
+    <h1 class="is-size-1 has-text-centered">Resources</h1>
+<div class="container">
+    <div class="columns py-4">
+        {%- for resource in collections.resources -%}
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-image py-4">
+                <figure class="image is-128x128 mx-auto">
+                  <img src="{{resource.data.logo}}" alt="logo" height="100px" width="100px" />
+                </figure>
+              </div>
+              <header>
+                <p class="card-header-title is-centered">
+                  {{resource.data.name}}
+                </p>
+              </header>
+              <div class="card-content has-text-centered">
+                <a
+                  href="{{resource.data.website}}"
+                  class="button is-info"
+                  target="_blank"
+                >
+                  Website
+                </a>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+    </div>
+  </div>
+</main>

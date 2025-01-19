@@ -1,0 +1,35 @@
+# Node modules
+/node_modules/
+
+# Eleventy output
+/_site/
+
+# Eleventy cache
+/.cache/
+
+# OS-specific files
+.DS_Store
+
+# Mac-specific files
+*.swp
+
+# Logs
+*.log
+
+# Build artifacts
+/dist/
+
+# npm package lock file
+package-lock.json
+
+# VS Code settings
+.vscode/
+
+# IDE-specific files (if applicable)
+.idea/
+
+# Environment files
+.env
+
+# Optional config files
+*.local

@@ -1,0 +1,35 @@
+---
+layout: default.html
+---
+<main class="container has-text-centered">
+    <h1 class="is-size-1 has-text-centered">Equipment</h1>
+<div class="container">
+    <div class="columns is-multiline py-4">
+        {%- for item in collections.equipment -%}
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-image py-4">
+                <figure class="image is-128x128 mx-auto">
+                  <img src="{{item.data.logo}}" alt="logo" height="100px" width="100px" />
+                </figure>
+              </div>
+              <header>
+                <p class="card-header-title is-centered">
+                  {{item.data.name}}
+                </p>
+              </header>
+              <div class="card-content has-text-centered">
+                <a
+                  href="{{item.data.website}}"
+                  class="button is-info"
+                  target="_blank"
+                >
+                  Website
+                </a>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+    </div>
+  </div>
+</main>
