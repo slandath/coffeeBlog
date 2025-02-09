@@ -6,74 +6,53 @@
     <meta name="description" content="Eleventy description" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Eleventy" />
-    <link rel="icon" href="https://api.iconify.design/material-symbols-light:coffee.svg" />
+    <link rel="icon" href="/assets/logo.svg" />
     <link rel="stylesheet" href="/main.css" />
     <title>{{title | default: "Tom's Coffee Blog"}}</title>
 </head>
 
 <body>
-    <nav class="" role="navigation" aria-label="main navigation">
-        <h1>Welcome to my Coffee Blog</h1>
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <img src="https://api.iconify.design/material-symbols-light:coffee.svg" width="30px" height="30px" />
-                <a role="button" class="navbar-burger" id="hamburger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </a>
-        </div>
-        <div class="navbar-menu" id="navbarMenu">
-            <div class="navbar-start">
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">Recipes</a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/french/">French Press</a>
-                        <a class="navbar-item" href="/drip/">Drip Coffee</a>
-                    </div>
-                </div>
-                <a class="navbar-item" href="/brands/">Brands</a>
-                <a class="navbar-item" href="/equipment/">Equipment</a>
-                <a class="navbar-item" href="/resources/">Resources</a>
-                <a class="navbar-item" href="/shops/">Shops</a>
-                <a class="navbar-item" href="/blog/">Blog</a>
-            </div>
+    <nav>
+        <div class="flex-container">
+            <a href="/"><img src="assets/logo.svg" width="30px" height="30px" alt="logo" /></a>
+            <ul class="nav-links">
+                <li><a href="/brands">Brands</a></li>
+                <li><a href="/equipment">Equipment</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/shops">Shop</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
         </div>
     </nav>
-    {{content}}
-    <footer class="footer has-background-info">
-        <div class="content has-text-centered">
-            <p>
-                <a href="https://www.11ty.dev/" target="_blank" class="text-red-500">
-                    Made with 11ty&nbsp; | &nbsp;
-                    <a href="https://slandath.github.io" target="_blank" class="has-text-light">
-                        My Website&nbsp; | &nbsp;
+    <div class="page-wrapper">
+        {{content}}
+    </div>
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li>
+                    <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">
+                        Made with 11ty
                     </a>
-                    <a href="https://www.github.com/slandath" target="_blank" class="has-text-light">
+                </li>
+                <li>
+                    <a href="https://slandath.github.io" target="_blank" rel="noopener noreferrer">
+                        My Website
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.github.com/slandath" target="_blank" rel="noopener noreferrer">
                         My Github
                     </a>
-                    <p>
-                        <a href="https://www.flaticon.com/free-icons/mug" target="_blank" title="mug icons"
-                            class="has-text-light">
-                            Mug icons created by Freepik - Flaticon.&nbsp;&nbsp;
-                        </a>
+                </li>
+                <li>
+                    <p id="copyright">
+                        Copyright &copy; {{ "now" | date: "%Y" }} Tom Slanda
                     </p>
-                    <p class="has-text-light" id="copyright">
-                        Copyright &copy; {{"now" | date: "%Y"}} Tom Slanda
-                    </p>
-                </a>
-            </p>
+                </li>
+            </ul>
         </div>
     </footer>
-    <script>
-        const hamburger = document.querySelector('#hamburger');
-        const navbarMenu = document.querySelector('#navbarMenu');
-        hamburger.addEventListener('click', () => {
-            navbarMenu.classList.toggle('is-active');
-        });
-    </script>
 </body>
 
 </html>

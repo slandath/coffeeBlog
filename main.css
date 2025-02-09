@@ -1,8 +1,138 @@
 :root {
-  --coffee-brown: hsl(25 21% 24.3%);
+  --brown: hsla(15, 20%, 25%, 1);
+  --cream: hsla(39, 85%, 85%, 1);
+  --espresso: hsla(0, 20%, 23%, 1);
+  --caramel: hsla(30, 50%, 60%, 1);
+  --mocha: hsla(15, 40%, 45%, 1);
+  --mint: hsla(160, 40%, 75%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  background-color: var(--coffee-brown);
-  color: white;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cream);
+  color: var(--espresso);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: var(--brown);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  background-color: var(--brown);
+  padding: 1rem;
+}
+
+#copyright {
+  margin-top: 1rem; /* Space above copyright */
+  text-align: center; /* Center text */
+}
+
+.espresso {
+  color: var(--espresso);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-container {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 5rem; /* Set a height for the footer */
+  margin: -1;
+}
+
+.footer-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Use flexbox for the list */
+  align-items: center; /* Center links horizontally */
+}
+.footer-links li {
+  margin: 0.5rem 0; /* Add some space between links */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* Space between links */
+}
+
+.nav-links a,
+p {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--caramel); /* Caramel */
+}
+
+.page-wrapper {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Make the wrapper at least the height of the viewport */
+}
+
+/* Image Container */
+.image-container {
+  width: var(--image-width, 100%); /* Set the desired width */
+  aspect-ratio: var(--aspect-ratio, 3 / 2);
+  overflow: hidden; /* Hide overflow if necessary */
+}
+
+.image-container img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%; /* Make the image fill the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Utility Classes for Image Container */
+.aspect-ratio-3-2 {
+  --aspect-ratio: 3 / 2;
+}
+.aspect-ratio-16-9 {
+  --aspect-ratio: 16 / 9;
+}
+.aspect-ratio-1-1 {
+  --aspect-ratio: 1 / 1;
+}
+
+.width-10 {
+  --image-width: 10%;
+}
+
+.width-25 {
+  --image-width: 25%;
+}
+
+.width-50 {
+  --image-width: 50%;
+}
+
+.width-75 {
+  --image-width: 75%;
+}
+
+.width-100 {
+  --image-width: 100%;
 }
