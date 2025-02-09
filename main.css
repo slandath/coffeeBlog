@@ -1,0 +1,8 @@
+:root {
+  --coffee-brown: hsl(25 21% 24.3%);
+}
+
+body {
+  background-color: var(--coffee-brown);
+  color: white;
+}
