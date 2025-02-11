@@ -1,0 +1,144 @@
+:root {
+  --brown: hsla(15, 20%, 25%, 1);
+  --cream: hsla(39, 85%, 85%, 1);
+  --espresso: hsla(0, 20%, 23%, 1);
+  --caramel: hsla(30, 50%, 60%, 1);
+  --mocha: hsla(15, 40%, 45%, 1);
+  --mint: hsla(160, 40%, 75%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100%;
+  font-size: 16px;
+  color: var(--espresso);
+  background-color: var(--cream);
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: var(--brown);
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+nav {
+  background-color: var(--brown);
+  padding: 1rem;
+}
+
+.espresso {
+  color: var(--espresso);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  list-style: none;
+}
+.footer-links a,
+p {
+  color: var(--cream);
+}
+.footer-links a:hover {
+  color: var(--caramel);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100vh;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+  list-style: none;
+}
+
+.nav-links li {
+  color: var(--espresso);
+}
+
+.nav-links a,
+p {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--caramel);
+}
+
+/* Image Container */
+.image-container {
+  width: var(--image-width, 100%); /* Set the desired width */
+  aspect-ratio: var(--aspect-ratio, 3 / 2);
+  overflow: hidden; /* Hide overflow if necessary */
+}
+
+.image-container img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%; /* Make the image fill the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Utility Classes for Image Container */
+.aspect-ratio-3-2 {
+  --aspect-ratio: 3 / 2;
+}
+.aspect-ratio-16-9 {
+  --aspect-ratio: 16 / 9;
+}
+.aspect-ratio-1-1 {
+  --aspect-ratio: 1 / 1;
+}
+
+.width-10 {
+  --image-width: 10%;
+}
+
+.width-25 {
+  --image-width: 25%;
+}
+
+.width-50 {
+  --image-width: 50%;
+}
+
+.width-75 {
+  --image-width: 75%;
+}
+
+.width-100 {
+  --image-width: 100%;
+}
