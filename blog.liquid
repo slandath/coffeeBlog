@@ -1,25 +1,26 @@
 ---
 layout: default.html
+title: Blog
 ---
-<main class="container has-text-centered">
-    <h1 class="is-size-1 has-text-centered">Blog Entries</h1>
-    <div class="container">
-        <div class="columns py-4">
-  {%- for post in collections.posts -%}
-    <div class="column is-one-quarter">
-        <div class="card">
-          <div class="card-content has-text-centered">
-            <div class="content">
-              <h5 class="card-title">{{post.data.title}}</h5>
-              <p class="card-text">{{ post.date | date: "%B %d, %Y"}}</p>
-              <a href="{{ post.url }}" class="button is-info">
-                Read More
-              </a>
-            </div>
-          </div>
+
+<main>
+  <div class="main-container">
+    <h1>Blog Posts</h1>
+    <div class="card-container">
+      {%- for post in collections.posts -%}
+      <div class="card">
+        <div class="card-heading">
+          <h2>{{ post.data.title }}</h2>
+        </div>
+        <div class="card-body">
+          <p>{{post.date | date: "%B %d, %Y"}}</p>
+          <p>{{ post.data.tagline }}</p>
+        </div>
+        <div class="card-footer">
+          <a class="espresso" href="{{ post.url }}">Read More</a>
         </div>
       </div>
-  {%- endfor -%}
-</div>
-</div>
+      {%- endfor -%}
+    </div>
+  </div>
 </main>

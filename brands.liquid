@@ -1,34 +1,25 @@
 ---
 layout: default.html
+title: Brands
 ---
-<main class="container has-text-centered">
-    <h1 class="is-size-1 has-text-centered">Brands</h1>
-<div class="container">
-    <div class="columns py-4">
+<main>
+  <div class="main-container">
+    <h1>Coffee Brands I Enjoy</h1>
+    <div class="card-container">
         {%- for brand in collections.brands -%}
-          <div class="column is-one-quarter">
-            <div class="card">
-              <div class="card-image py-4">
-                <figure class="image is-128x128 mx-auto">
-                  <img src="{{brand.data.logo}}" alt="logo" height="100px" width="100px" />
-                </figure>
-              </div>
-              <header>
-                <p class="card-header-title is-centered">
-                  {{brand.data.name}}
-                </p>
-              </header>
-              <div class="card-content has-text-centered">
-                <a
-                  href="{{brand.data.website}}"
-                  class="button is-info"
-                  target="_blank"
-                >
-                  Website
-                </a>
-              </div>
-            </div>
+        <div class="card">
+          <div class="card-heading">
+            <h2>{{brand.data.name}}</h2>
           </div>
+          <div class="card-body">
+          <div class="image-container width-50 aspect-ratio-1-1">
+            <img src="{{brand.data.logo}}" alt="brand logo">
+          </div>
+          </div>
+          <div class="card-footer">
+            <a class="espresso" href="{{brand.data.website}}">Website</a>
+          </div>
+        </div>
         {%- endfor -%}
     </div>
   </div>
