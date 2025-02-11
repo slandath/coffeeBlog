@@ -1,34 +1,25 @@
 ---
 layout: default.html
+title: Resources
 ---
-<main class="container has-text-centered">
-    <h1 class="is-size-1 has-text-centered">Resources</h1>
-<div class="container">
-    <div class="columns py-4">
+<main>
+  <div class="main-container">
+    <h1>Great Resources</h1>
+    <div class="card-container">
         {%- for resource in collections.resources -%}
-          <div class="column is-one-quarter">
-            <div class="card">
-              <div class="card-image py-4">
-                <figure class="image is-128x128 mx-auto">
-                  <img src="{{resource.data.logo}}" alt="logo" height="100px" width="100px" />
-                </figure>
-              </div>
-              <header>
-                <p class="card-header-title is-centered">
-                  {{resource.data.name}}
-                </p>
-              </header>
-              <div class="card-content has-text-centered">
-                <a
-                  href="{{resource.data.website}}"
-                  class="button is-info"
-                  target="_blank"
-                >
-                  Website
-                </a>
-              </div>
-            </div>
+        <div class="card">
+          <div class="card-heading">
+            <h2>{{resource.data.name}}</h2>
           </div>
+          <div class="card-body">
+          <div class="image-container width-100 aspect-ratio-1-1">
+            <img src="{{resource.data.logo}}" alt="brand logo">
+          </div>
+          </div>
+          <div class="card-footer">
+            <a class="espresso" href="{{resource.data.website}}">Website</a>
+          </div>
+        </div>
         {%- endfor -%}
     </div>
   </div>

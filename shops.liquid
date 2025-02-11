@@ -1,34 +1,24 @@
 ---
 layout: default.html
 ---
-<main class="container has-text-centered">
-    <h1 class="is-size-1 has-text-centered">Shops</h1>
-<div class="container">
-    <div class="columns py-4">
+<main">
+  <div class="main-container">
+    <h1>Coffee Shops I Love</h1>
+    <div class="card-container">
         {%- for shop in collections.shops -%}
-          <div class="column is-one-quarter">
-            <div class="card p-4">
-              <div class="card-image">
-                <figure class="image">
-                  <img src="{{shop.data.logo}}" alt="logo" height="100px" width="100px" />
-                </figure>
-              </div>
-              <header>
-                <p class="card-header-title is-centered py-2">
-                  {{shop.data.name}}
-                </p>
-              </header>
-              <div class="card-content has-text-centered py-1">
-                <p class="mb-3">{{ shop.data.location }}</p>
-                <a
-                  href="{{shop.url}}"
-                  class="button is-info"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
+        <div class="card">
+          <div class="card-heading">
+            <h2>{{shop.data.name}}</h2>
           </div>
+          <div class="card-body">
+          <div class="image-container width-100 aspect-ratio-1-1">
+            <img src="{{shop.data.logo}}" alt="brand logo">
+          </div>
+          </div>
+          <div class="card-footer">
+            <a class="espresso" href="{{shop.data.website}}">Website</a>
+          </div>
+        </div>
         {%- endfor -%}
     </div>
   </div>
