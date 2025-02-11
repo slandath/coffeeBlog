@@ -12,47 +12,50 @@
 </head>
 
 <body>
-    <nav>
-        <div class="flex-container">
-            <a href="/"><img src="assets/logo.svg" width="30px" height="30px" alt="logo" /></a>
-            <ul class="nav-links">
-                <li><a href="/brands">Brands</a></li>
-                <li><a href="/equipment">Equipment</a></li>
-                <li><a href="/resources">Resources</a></li>
-                <li><a href="/shops">Shop</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="page-wrapper">
+    <div class="grid-container">
+        <nav>
+            <div class="flex-container">
+                <a href="/"><img src="assets/logo.svg" width="30px" height="30px" alt="logo" /></a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/brands">Brands</a></li>
+                    <li><a href="/equipment">Equipment</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/shops">Shop</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
         {{content}}
+        <footer>
+            <div class="footer-container">
+                <ul>
+                    <div class="footer-links">
+                        <li>
+                            <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">
+                                Made with 11ty
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://slandath.github.io" target="_blank" rel="noopener noreferrer">
+                                My Website
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.github.com/slandath" target="_blank" rel="noopener noreferrer">
+                                My Github
+                            </a>
+                        </li>
+                    </div>
+                    <li>
+                        <p id="copyright">
+                            Copyright &copy; {{ "now" | date: "%Y" }} Tom Slanda
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div class="footer-container">
-            <ul class="footer-links">
-                <li>
-                    <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">
-                        Made with 11ty
-                    </a>
-                </li>
-                <li>
-                    <a href="https://slandath.github.io" target="_blank" rel="noopener noreferrer">
-                        My Website
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.github.com/slandath" target="_blank" rel="noopener noreferrer">
-                        My Github
-                    </a>
-                </li>
-                <li>
-                    <p id="copyright">
-                        Copyright &copy; {{ "now" | date: "%Y" }} Tom Slanda
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </footer>
 </body>
 
 </html>

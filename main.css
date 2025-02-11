@@ -14,33 +14,32 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: var(--cream);
-  color: var(--espresso);
+html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
-  flex: 1;
+body {
+  height: 100%;
+  font-size: 16px;
+  color: var(--espresso);
+  background-color: var(--cream);
+  margin: 0;
+  padding: 0;
 }
 
 footer {
   background-color: var(--brown);
-  padding: 1rem;
+  margin: 0;
   text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
 }
 
 nav {
   background-color: var(--brown);
   padding: 1rem;
-}
-
-#copyright {
-  margin-top: 1rem; /* Space above copyright */
-  text-align: center; /* Center text */
 }
 
 .espresso {
@@ -52,29 +51,42 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-.footer-container {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  height: 5rem; /* Set a height for the footer */
-  margin: -1;
-}
 
 .footer-links {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  display: flex; /* Use flexbox for the list */
-  align-items: center; /* Center links horizontally */
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  list-style: none;
 }
-.footer-links li {
-  margin: 0.5rem 0; /* Add some space between links */
+.footer-links a,
+p {
+  color: var(--cream);
+}
+.footer-links a:hover {
+  color: var(--caramel);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100vh;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1rem; /* Space between links */
+  gap: 2rem;
+  text-align: center;
+  list-style: none;
+}
+
+.nav-links li {
+  color: var(--espresso);
 }
 
 .nav-links a,
@@ -84,13 +96,7 @@ p {
 }
 
 .nav-links a:hover {
-  color: var(--caramel); /* Caramel */
-}
-
-.page-wrapper {
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack children vertically */
-  min-height: 100vh; /* Make the wrapper at least the height of the viewport */
+  color: var(--caramel);
 }
 
 /* Image Container */
