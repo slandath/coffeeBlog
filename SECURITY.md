@@ -13,7 +13,7 @@ We take security seriously and provide support for the following versions of thi
 
 If you discover a security vulnerability, we appreciate your responsible disclosure. Please follow the steps below:
 
-1. **Contact Us**: Report the vulnerability by emailing us at **[turizak.dev@gmail.com]**. Alternatively, use [GitHub's private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/creating-a-security-advisory).
+1. **Contact Us**: Report the vulnerability by emailing us at **[jesus_slanda@yahoo.com]**. Alternatively, use [GitHub's private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/creating-a-security-advisory).
 2. **Provide Details**:
    - A detailed description of the vulnerability.
    - Steps to reproduce the issue (e.g., code, configurations, or logs).
