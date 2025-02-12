@@ -13,49 +13,18 @@
 
 <body>
     <div class="grid-container">
-        <nav>
-            <div class="flex-container">
-                <a href="/"><img class="image-container width-100 aspect-ratio-1-1" src="assets/logo.svg" alt="logo" /></a>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/brands">Brands</a></li>
-                    <li><a href="/equipment">Equipment</a></li>
-                    <li><a href="/resources">Resources</a></li>
-                    <li><a href="/shops">Shop</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                </ul>
-            </div>
-        </nav>
+        {% include navbar.html %}
         {{content}}
-        <footer>
-            <div class="footer-container">
-                <ul>
-                    <div class="footer-links">
-                        <li>
-                            <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">
-                                Made with 11ty
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://slandath.github.io" target="_blank" rel="noopener noreferrer">
-                                My Website
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.github.com/slandath" target="_blank" rel="noopener noreferrer">
-                                My Github
-                            </a>
-                        </li>
-                    </div>
-                    <li>
-                        <p id="copyright">
-                            Copyright &copy; {{ "now" | date: "%Y" }} Tom Slanda
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+        {% include footer.html %}
     </div>
 </body>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 
 </html>

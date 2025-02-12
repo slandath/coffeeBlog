@@ -19,7 +19,7 @@ html {
 }
 
 article p {
-  color: var(--espresso)
+  color: var(--espresso);
 }
 
 body {
@@ -50,12 +50,21 @@ nav {
   display: block;
   padding: 2rem;
 }
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
 .card {
   display: flex;
   flex-direction: column;
   background: var(--white);
-  border-radius: .50rem;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   width: 200px;
   height: 250px;
 }
@@ -79,19 +88,11 @@ nav {
   gap: 2rem;
 }
 
-@media (max-width: 700px) {
-  .card-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
 .card-heading {
   background: var(--caramel);
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   text-align: center;
-  padding: .1rem 1rem .1rem 1rem
+  padding: 0.1rem 1rem 0.1rem 1rem;
 }
 
 .card-heading h2 {
@@ -101,8 +102,8 @@ nav {
 .card-footer {
   background: var(--caramel);
   text-align: center;
-  border-radius: 0 0 .5rem .5rem;
-  padding: .5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0.5rem;
 }
 
 .card-footer a:hover {
@@ -138,11 +139,35 @@ p {
   grid-template-rows: 5rem 1fr 5rem;
   height: 100vh;
 }
+
+.hamburger {
+  display: none; /* Hide by default on larger screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Remove default button padding */
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--cream); /* Or your desired color */
+  border-radius: 0.5rem;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 3rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .nav-links {
@@ -150,10 +175,8 @@ p {
   gap: 2rem;
   text-align: center;
   list-style: none;
-}
-
-.nav-links li {
-  color: var(--espresso);
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a,
@@ -172,7 +195,7 @@ p {
   aspect-ratio: var(--aspect-ratio, 3 / 2);
   overflow: hidden; /* Hide overflow if necessary */
   margin: 0 auto;
-  padding: .5rem
+  padding: 0.5rem;
 }
 
 .image-container img {
@@ -210,4 +233,41 @@ p {
 
 .width-100 {
   --image-width: 100%;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hamburger {
+    display: block; /* Show hamburger on smaller screens */
+    margin-left: auto; /* Push to the right */
+  }
+  .main-container {
+    text-align: center;
+  }
+  .nav-container {
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+  .nav-links {
+    display: none; /* Hide links by default on smaller screens */
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    position: absolute; /* So it can overlay the content */
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: hsla(15, 20%, 25%, 0.9);
+    padding: 1rem 0; /* Add some padding */
+    z-index: 1; /* Ensure it's on top */
+  }
+  .nav-links.active {
+    /* Class to show the menu */
+    display: flex;
+  }
 }
