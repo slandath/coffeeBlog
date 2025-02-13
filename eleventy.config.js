@@ -15,6 +15,7 @@ export default function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("./shops/*.liquid")
   });
   eleventyConfig.addPassthroughCopy("main.css");
+  eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.setLiquidOptions({
       dynamicPartials: false,
