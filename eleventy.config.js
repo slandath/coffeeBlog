@@ -8,6 +8,9 @@ export default function(eleventyConfig) {
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./blog/*.liquid").sort((a, b) => b.date - a.date);
   });
+  eleventyConfig.addCollection("recipes", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./recipes/*.liquid")
+  });
   eleventyConfig.addCollection("resources", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./resources/*.liquid")
   });
