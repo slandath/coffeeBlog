@@ -10,11 +10,10 @@ title: Blog
       {%- for post in collections.posts -%}
       <div class="card">
         <div class="card-heading">
-          <h2>{{ post.data.title }}</h2>
+          <h2>{{post.date | date: "%B %d, %Y"}}</h2>
         </div>
         <div class="card-body">
-          <p>{{post.date | date: "%B %d, %Y"}}</p>
-          <p>{{ post.data.tagline }}</p>
+          <p>{{ post.data.title }}</p>
         </div>
         <div class="card-footer">
           <a class="espresso" href="{{ post.url }}">Read More</a>
