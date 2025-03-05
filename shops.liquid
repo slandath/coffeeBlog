@@ -1,7 +1,7 @@
 ---
 layout: default.html
 ---
-<main">
+<main>
   <div class="main-container">
     <h1>Coffee Shops I Love</h1>
     <div class="card-container">
@@ -11,12 +11,12 @@ layout: default.html
             <h2>{{shop.data.name}}</h2>
           </div>
           <div class="card-body">
-          <div class="image-container width-100 aspect-ratio-1-1">
+          <div class="image-container width-75 aspect-ratio-1-1">
             <img src="{{shop.data.logo}}" alt="brand logo">
           </div>
           </div>
           <div class="card-footer">
-            <a class="espresso" href="{{shop.data.website}}">Website</a>
+            <a class="espresso" href="{{shop.data.website}}">More Info</a>
           </div>
         </div>
         {%- endfor -%}
