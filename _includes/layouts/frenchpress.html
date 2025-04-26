@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Eleventy description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Eleventy" />
+    <link rel="icon" href="/assets/logo.svg" />
+    <link rel="stylesheet" href="/main.css" />
+    <title>{{title | default: "Tom's Coffee Blog"}}</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        {% include navbar.html %}
+        {{content}}
+        {% include footer.html %}
+    </div>
+</body>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+const fpBrewedCoffee = document.querySelector('#fpBrewedCoffee');
+const fpWaterAmt = document.querySelector('#fpWaterAmt');
+const fpCoffeeAmt = document.querySelector('#fpCoffeeAmt');
+
+document.addEventListener('input', inputHandler);
+
+function inputHandler() {
+  const results = makeFPCoffee(+fpBrewedCoffee.value);
+  if (results.water % 8 === 0) {
+    fpWaterAmt.innerText = `${results.water} fl oz water
+          (${results.water / 8} cups)`;
+  } else {
+    fpWaterAmt.innerText = results.water + ' fl oz water';
+  }
+  if (results.groundCoffee % 16 === 0) {
+    fpCoffeeAmt.innerText = `${
+      results.groundCoffee
+    } tbsp coffee (${results.groundCoffee / 16} cup)`;
+  } else
+    fpCoffeeAmt.innerText =
+      results.groundCoffee + ' tbsp coffee';
+}
+
+function makeFPCoffee(num) {
+  const water = num * 6;
+  const groundCoffee = num * 2;
+  return { water, groundCoffee };
+}
+</script>
+
+</html>

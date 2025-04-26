@@ -1,22 +1,23 @@
 ---
 layout: default.html
+title: Recipes
 ---
 <main>
   <div class="main-container">
-    <h1>Coffee Shops I Love</h1>
+    <h1>Coffee Recipes</h1>
     <div class="card-container">
-        {%- for shop in collections.shops -%}
+        {%- for recipe in collections.recipes -%}
         <div class="card">
           <div class="card-heading">
-            <h2>{{shop.data.name}}</h2>
+            <h2>{{recipe.data.title}}</h2>
           </div>
           <div class="card-body">
-          <div class="image-container width-75 aspect-ratio-1-1">
-            <img src="{{shop.data.logo}}" alt="brand logo">
+          <div class="image-container width-60 aspect-ratio-1-1">
+            <img src="{{recipe.data.logo}}" alt="brand logo">
           </div>
           </div>
           <div class="card-footer">
-            <a class="espresso" href="{{shop.data.website}}">More Info</a>
+            <a class="espresso" href="{{recipe.data.link}}">Link</a>
           </div>
         </div>
         {%- endfor -%}
