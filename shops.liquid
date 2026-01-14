@@ -5,21 +5,21 @@ layout: default.html
   <div class="main-container">
     <h1>Coffee Shops I Love</h1>
     <div class="card-container">
-        {%- for shop in collections.shops -%}
+      {%- for shop in collections.shops -%}
         <div class="card">
           <div class="card-heading">
-            <h2>{{shop.data.name}}</h2>
+            <h2>{{ shop.data.name }}</h2>
           </div>
           <div class="card-body">
-          <div class="image-container width-75 aspect-ratio-1-1">
-            <img src="{{shop.data.logo}}" alt="brand logo">
-          </div>
+            <div class="image-container width-75 aspect-ratio-1-1">
+              <img src="{{shop.data.logo}}" alt="brand logo">
+            </div>
           </div>
           <div class="card-footer">
             <a class="espresso" href="{{shop.data.website}}">More Info</a>
           </div>
         </div>
-        {%- endfor -%}
+      {%- endfor -%}
     </div>
   </div>
 </main>

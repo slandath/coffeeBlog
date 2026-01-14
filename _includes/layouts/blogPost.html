@@ -1,12 +1,11 @@
 ---
 layout: default.html
 ---
+
 <article>
-    <div class="blog-container">
-        <h1>{{title}}</h1>
-        <p class="espresso">{{date | date: "%B %d, %Y"}} by Tom</p>
-        <div class="article-container">
-            {{content}}
-        </div>
-    </div>
+  <div class="blog-container">
+    <h1>{{title}}</h1>
+    <p class="espresso">{{date | date: "%B %d, %Y"}} by Tom</p>
+    <div class="article-container">{{content}}</div>
+  </div>
 </article>
