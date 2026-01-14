@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Eleventy description" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,50 +8,45 @@
     <link rel="icon" href="/assets/logo.svg" />
     <link rel="stylesheet" href="/main.css" />
     <title>{{title | default: "Tom's Coffee Blog"}}</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="grid-container">
-        {% include navbar.html %}
-        {{content}}
-        {% include footer.html %}
+      {% include navbar.html %} {{content}} {% include footer.html %}
     </div>
-</body>
-<script>
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+  </body>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-const dripBrewedCoffee = document.querySelector('#dripBrewedCoffee');
-const dripWaterAmt = document.querySelector('#dripWaterAmt');
-const dripCoffeeAmt = document.querySelector('#dripCoffeeAmt');
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+    const dripBrewedCoffee = document.querySelector("#dripBrewedCoffee");
+    const dripWaterAmt = document.querySelector("#dripWaterAmt");
+    const dripCoffeeAmt = document.querySelector("#dripCoffeeAmt");
 
-document.addEventListener('input', inputHandler);
+    document.addEventListener("input", inputHandler);
 
-function inputHandler() {
-  const results = makeDripCoffee(+dripBrewedCoffee.value);
-  if (results.water % 8 === 0) {
-    dripWaterAmt.innerText = `${results.water} fl oz water
+    function inputHandler() {
+      const results = makeDripCoffee(+dripBrewedCoffee.value);
+      if (results.water % 8 === 0) {
+        dripWaterAmt.innerText = `${results.water} fl oz water
           (${results.water / 8} cups)`;
-  } else {
-    dripWaterAmt.innerText = results.water + ' fl oz water';
-  }
-  if (results.groundCoffee % 16 === 0) {
-    dripCoffeeAmt.innerText = `${
-      results.groundCoffee
-    } tbsp coffee (${results.groundCoffee / 16} cup)`;
-  } else
-    dripCoffeeAmt.innerText =
-      results.groundCoffee + ' tbsp coffee';
-}
+      } else {
+        dripWaterAmt.innerText = results.water + " fl oz water";
+      }
+      if (results.groundCoffee % 16 === 0) {
+        dripCoffeeAmt.innerText = `${
+          results.groundCoffee
+        } tbsp coffee (${results.groundCoffee / 16} cup)`;
+      } else dripCoffeeAmt.innerText = results.groundCoffee + " tbsp coffee";
+    }
 
-function makeDripCoffee(num) {
-  const water = num * 6;
-  const groundCoffee = water / 6;
-  return { water, groundCoffee };
-}
-</script>
-
+    function makeDripCoffee(num) {
+      const water = num * 6;
+      const groundCoffee = water / 6;
+      return { water, groundCoffee };
+    }
+  </script>
 </html>

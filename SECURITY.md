@@ -4,9 +4,9 @@
 
 We take security seriously and provide support for the following versions of this project. If you find a security issue, please check if it affects a supported version before reporting.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.0.0   | ✅ Supported       |
+| Version | Supported              |
+| ------- | ---------------------- |
+| 1.0.0   | ✅ Supported           |
 | X.X.X   | ❌ No longer supported |
 
 ## Reporting a Vulnerability
@@ -29,6 +29,7 @@ If you discover a security vulnerability, we appreciate your responsible disclos
 ## General Security Guidelines
 
 To ensure your project remains secure:
+
 - Regularly update dependencies and apply security patches.
 - Use security tools to analyze and monitor your code.
 - Follow best practices for authentication, data encryption, and secure configurations.
